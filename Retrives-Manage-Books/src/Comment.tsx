@@ -10,6 +10,8 @@ const Comment = () => {
               src="https://cdn.pixabay.com/photo/2014/03/25/16/54/user-297566_640.png"
               alt=""
             />
+            <p>Jana Smith</p>
+            <div className="date">23.4.2222</div>
           </div>
           <div className="tex">here is the comment text goes here</div>
           <div className="review">*****</div>

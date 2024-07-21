@@ -1,3 +1,5 @@
+import Comment from "./Comment";
+
 const Bookdetail = () => {
   return (
     <div>
@@ -17,6 +19,7 @@ const Bookdetail = () => {
           </div>
         </div>
       </div>
+      <Comment />
     </div>
   );
 };

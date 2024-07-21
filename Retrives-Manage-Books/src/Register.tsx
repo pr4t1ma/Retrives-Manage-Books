@@ -1,6 +1,6 @@
 import { ChangeEventHandler, useState } from "react";
 
-const Login = () => {
+const Register = () => {
   const [inputVal, setInputVal] = useState("");
 
   const ChangeInputVal: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -8,12 +8,21 @@ const Login = () => {
     console.log("hello", e);
   };
   return (
-    <div className="main">
+    <div>
+      <h1>Register Here</h1>
       <div className="signin-form">
         <form action="">
           <div className="form-wrapper">
-            <h2>Login</h2>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="Name">Name</label>
+            <input
+              type="name"
+              name="name"
+              id="name"
+              placeholder="name"
+              onChange={ChangeInputVal}
+              value={inputVal}
+            />
+            <label htmlFor="name">Name</label>
             <input
               type="email"
               name="Email"
@@ -39,4 +48,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
