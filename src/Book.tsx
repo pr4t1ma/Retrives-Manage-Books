@@ -7,13 +7,11 @@ type BookProps = {
 };
 const Book: FC<BookProps> = ({ img, title, author, text }) => {
   return (
-    <div>
-      <div className="book-card">
-        <img src={img} alt="" />    
-        <h2>{title}</h2>
-        <p>{author}</p>
-        <p>{text}</p>
-      </div>
+    <div className="book-card">
+      <img src={img} alt="" />
+      <h2>{title}</h2>
+      <p>{author}</p>
+      <p>{text}</p>
     </div>
   );
 };

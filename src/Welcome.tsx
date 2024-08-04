@@ -5,11 +5,11 @@ const Welcome = () => {
     <div className="register main">
       <h1>Welcome to my book store</h1>
       <div className="btn-wrapper">
-        <Link className="btn btn-btn" to="Register">
+        <Link to="register" className="btn btn-btn">
           Register
         </Link>
-        <Link className="btn btn-active" to="Login">
-          Sign In
+        <Link className=" btn btn-primary" to="/login">
+          Login
         </Link>
       </div>
     </div>

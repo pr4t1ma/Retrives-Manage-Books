@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Book from "./Book";
+import Bookdetail from "./Bookdetail";
+import { Link } from "react-router-dom";
 
 const BooksStore = () => {
   const [serchTerm, setSerchTerm] = useState("");
@@ -12,6 +14,7 @@ const BooksStore = () => {
         method: "GET",
       }
     ).then((res) => res.json());
+    setBooksData(data);
     setResults(data);
   };
   useEffect(() => {
@@ -25,10 +28,10 @@ const BooksStore = () => {
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     console.log(serchTerm);
+    console.log(booksData);
     const filterResults = booksData.filter((book) =>
       book.name.toLowerCase().includes(serchTerm.toLowerCase())
     );
-    setBooksData(booksData);
     setResults(filterResults);
   };
   return (
@@ -47,17 +50,21 @@ const BooksStore = () => {
         </div>
       </form>
 
-      <div className="flex">
+      <div className="books flex">
         {results.map((book) => {
           return (
-            <Book
-              title={book.name}
-              author={book.author}
-              text={book.description}
-              img={book.img}
-            />
+            <Link to="/Bookdetail">
+              <Book
+                key={book.id}
+                title={book.name}
+                author={book.author}
+                text={book.description}
+                img={book.img}
+              />
+            </Link>
           );
         })}
+        <Bookdetail />
       </div>
     </div>
   );

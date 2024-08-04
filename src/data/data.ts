@@ -75,7 +75,7 @@ export const booksData = [
     name: "JavaScript: The Good Parts",
     author: "Douglas Crockford",
     description: "A deep dive into the best features of JavaScript.",
-    img: "https://m.media-amazon.com/images/I/7185IMvz88L._AC_UF894,1000_QL80_.jpg",
+    img: "https://th.bing.com/th/id/R.e49d1f6f2e23b0e829e461b2897b1683?rik=RZpRalRtfrML7w&riu=http%3a%2f%2f4.bp.blogspot.com%2f-xHCN2bXV1G0%2fVnWLdNJqQJI%2fAAAAAAAAReY%2fleqUN3DiBu8%2fs1600%2fjavascript-the-good-parts.jpg&ehk=FD%2bvmFtenIHbyAIxwkLegSCjha2zXZq%2fW%2frZP%2fx2UIo%3d&risl=&pid=ImgRaw&r=0",
     reviews: [
       {
         user: "Hank",

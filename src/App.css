@@ -49,12 +49,12 @@ img {
   border-radius: 10px;
   text-align: center;
   border: none;
+  align-items: center;
 }
 
-.btn-primary {
+.btn.btn-primary {
   background-color: rgb(84, 129, 244);
-  width: 100px;
-  height: 50px;
+
   color: #fff;
   border-radius: 10px;
 }
@@ -72,6 +72,11 @@ input {
   padding: 10px;
   margin-bottom: 5px;
   border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+input:active {
+  border: 1px solid #ccc;
 }
 
 .form-wrapper {
@@ -94,16 +99,67 @@ input {
   display: flex;
 }
 
+.books {
+  align-items: stretch;
+}
+
 .book-card {
-  width: 300px;
-  height: 500px;
+  width: 212px;
   padding: 20px;
   border: 1px solid #ccc;
   text-align: center;
-  margin: 20px 0;
 }
 
 .book-card img {
   width: 200px;
-  height: 300px;
+  height: 200px;
+}
+
+/* comment section css start from here */
+
+.comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.userinfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+.userinfo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.reviewmeta {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* books details  design start from here */
+.book-details {
+  align-items: flex-start;
+  display: flex;
+  gap: 20px;
+}
+
+.book-detailsmeta {
+  display: flex;
+  flex-direction: column;
+}
+.book-detailsmeta p {
+  padding: 0;
+  margin: 7px;
 }
