@@ -10,9 +10,6 @@ const Comment = () => {
             />
             <div className="reviewmeta">
               <p>Jana Smith</p>
-              {/* <div className="date">23.4.2222</div> */}
-
-              {/* <div className="review">*****</div> */}
             </div>
           </div>
         </div>

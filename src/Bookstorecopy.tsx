@@ -23,6 +23,10 @@ const Bookstorecopy = () => {
     const filterResults = bookData.filter((book) =>
       book.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
+    bookData.filter((book) =>
+      book.auther.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+    );
+
     setResults(filterResults);
   };
 

@@ -22,7 +22,7 @@ const Register = () => {
               onChange={ChangeInputVal}
               value={inputVal}
             />
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Email</label>
             <input
               type="email"
               name="Email"

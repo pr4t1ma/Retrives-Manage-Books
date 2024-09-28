@@ -1,19 +1,15 @@
 import { useEffect, useState } from "react";
 import Book from "./Book";
-import Bookdetail from "./Bookdetail";
 import { Link } from "react-router-dom";
 
 const BooksStore = () => {
-  const [serchTerm, setSerchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState<any[]>([]);
   const [booksData, setBooksData] = useState<any[]>([]);
   const getBooks = async () => {
-    const data = await fetch(
-      "https://669b7bc3276e45187d359bc8.mockapi.io/books",
-      {
-        method: "GET",
-      }
-    ).then((res) => res.json());
+    const data = await fetch("http://localhost:3050/books", {
+      method: "GET",
+    }).then((res) => res.json());
     setBooksData(data);
     setResults(data);
   };
@@ -22,15 +18,17 @@ const BooksStore = () => {
   }, []);
 
   const handlerInputVal = (e: any) => {
-    setSerchTerm(e.target.value);
+    setSearchTerm(e.target.value);
   };
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    console.log(serchTerm);
+    console.log(searchTerm);
     console.log(booksData);
-    const filterResults = booksData.filter((book) =>
-      book.name.toLowerCase().includes(serchTerm.toLowerCase())
+    const filterResults = booksData.filter(
+      (book) =>
+        book.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        book.author.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setResults(filterResults);
   };
@@ -42,7 +40,7 @@ const BooksStore = () => {
             type="search"
             placeholder="search"
             onChange={handlerInputVal}
-            value={serchTerm}
+            value={searchTerm}
           />
           <button className=" btn btn-primary" type="submit">
             search
@@ -53,7 +51,7 @@ const BooksStore = () => {
       <div className="books flex">
         {results.map((book) => {
           return (
-            <Link to="/Bookdetail">
+            <Link to="/bookdetail">
               <Book
                 key={book.id}
                 title={book.name}
@@ -64,7 +62,6 @@ const BooksStore = () => {
             </Link>
           );
         })}
-        <Bookdetail />
       </div>
     </div>
   );
