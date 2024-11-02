@@ -236,8 +236,8 @@ const doesExist = (username) => {
   });
 };
 // // Return true if any user with the same username is found, otherwise false
-if (userswithSamename.length > 0) {
-  return true;
-} else {
-  return false;
-}
+// if (userswithSamename.length > 0) {
+//   return true;
+// } else {
+//   return false;
+// }
